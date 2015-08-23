@@ -1,7 +1,6 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+##This function takes in a matrix as an argument.
+##The function then sets internal objects that are initially empty
+##and creates a list that is a function that solves
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -19,13 +18,14 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This function looks at the cached matrix and decides whether or not 
+## the matrix needs to be solved for or not. 
 
 cacheSolve <- function(x=matrix(), ...) {
   m <- x$get_mat
   if(!is.null(m)) {
-    message("getting cached data")
-    return(m)
+    message("getting cached matrix")  ##if the inverse matrix is cached this statement is executed
+    return(m)                         ##and the cahced matrix is returned
   }
   data <- x$get()
   m <- solve(data, ...)
